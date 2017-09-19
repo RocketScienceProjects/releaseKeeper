@@ -2,7 +2,6 @@
   <div class="container">
     <header class="jumbotron">
       <div>
-          <h3>The Release Tracker App</h3>
           <p>Salesforce release deployment information for Global SalesForce Team - CBRE</p>
           <p>
             <a class="btn btn-primary btn-sm" href="/new">Add new release</a>
@@ -10,12 +9,17 @@
       </div>
     </header>
 
-
-      <% releases.forEach(function(release){ %>
-        <div>
-           <%= release.org %> - <%= release.package %> - <%= release.date %>
-        </div>
-      <% }) %>
+     <div class="column">
+        <% releases.forEach(function(release){ %>
+          <div class="col-md-3 col-sm-6">
+            <p background-color: yellow>
+              <li>ORG_NAME: <%= release.org %></li>
+               <li>PACKAGE: <%= release.package %></li>
+               <li>DEPLOYED_ON: <%= release.date %></li>
+            </p>
+          </div>
+        <% }) %>
+     </div>
 
   </div>
 
