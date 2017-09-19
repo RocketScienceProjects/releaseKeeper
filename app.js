@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
-//var request = require('request');
+var bodyparser = require('body-parser');
+app.use(bodyparser.urlencoded({extended: true})); //declare to use the body-parser
 app.set("view engine", "ejs");
 
 var releases = [
@@ -17,8 +18,12 @@ app.get("/", function(req, res){
 });
 
 //Create a POST route that accepts new values to be updated, and redirect to the home route
-//app.post("/",)
+app.post("/", function(req, res){
+  res.send("you have hit the post page!");
+  //get the data
+  //redirect to the home page
+});
 
 app.listen('9090', function(){
-  console.log("release tracker app started....")
+  console.log("Release Tracker App Server Started....");
 });

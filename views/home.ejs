@@ -1,9 +1,12 @@
-<h1>Welcome to the release tracker</h1>
-<p>The release tracker for Global SalesForce Team - CBRE</p>
+<% include partials/header %>
 
-<% releases.forEach(function(release){ %>
-  <li>
-    <%= release.org %> - <%= release.package %> - <%= release.date %>
-  </li>
+  <h1>Welcome to the release tracker</h1>
+  <p>The release tracker for Global SalesForce Team - CBRE</p>
 
-<% }) %>
+  <% releases.forEach(function(release){ %>
+    <div>
+       <%= release.org %> - <%= release.package %> - <%= release.date %>
+    </div>
+  <% }) %>
+
+<% include partials/footer %>
