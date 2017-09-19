@@ -1,12 +1,22 @@
-<% include partials/header %>
+  <% include partials/header %>
+  <div class="container">
+    <header class="jumbotron">
+      <div>
+          <h3>The Release Tracker App</h3>
+          <p>Salesforce release deployment information for Global SalesForce Team - CBRE</p>
+          <p>
+            <a class="btn btn-primary btn-sm" href="/new">Add new release</a>
+          </p>
+      </div>
+    </header>
 
-  <h1>Welcome to the release tracker</h1>
-  <p>The release tracker for Global SalesForce Team - CBRE</p>
 
-  <% releases.forEach(function(release){ %>
-    <div>
-       <%= release.org %> - <%= release.package %> - <%= release.date %>
-    </div>
-  <% }) %>
+      <% releases.forEach(function(release){ %>
+        <div>
+           <%= release.org %> - <%= release.package %> - <%= release.date %>
+        </div>
+      <% }) %>
 
-<% include partials/footer %>
+  </div>
+
+  <% include partials/footer %>

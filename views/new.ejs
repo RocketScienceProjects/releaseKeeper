@@ -1,0 +1,14 @@
+<% include partials/header %>
+
+<h1>Enter the details of the new deployment</h1>
+
+<form action="/" method="post">
+   <input type="text" name="org" placeholder="org name">
+   <input type="text" name="package" placeholder="packageVersion">
+   <input type="text" name="date" placeholder="timestamp of deployment">
+   <button>Submit</button>
+</form>
+
+<a href="/">Go Back</a>
+
+<% include partials/footer %>
