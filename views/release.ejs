@@ -9,14 +9,15 @@
       </div>
     </header>
 
-     <div class="column">
+     <div class="row">
         <% releases.forEach(function(release){ %>
           <div class="col-md-3 col-sm-6">
-            <p background-color: yellow>
-              <li>ORG_NAME: <%= release.org %></li>
-               <li>PACKAGE: <%= release.package %></li>
-               <li>DEPLOYED_ON: <%= release.date %></li>
+            <div class="thumbnail" style="background-color: #C38DDC" "text-align: center">
+            <p>
+              <li><strong>ORG_NAME: <%= release.org %></strong></li>
+              <a class="btn btn-primary btn-sm" href="/">More info</a>
             </p>
+            </div>
           </div>
         <% }) %>
      </div>

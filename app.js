@@ -41,7 +41,7 @@ app.get("/", function(req, res){
 app.get("/release", function(req, res){
   //get the data from db and render them in the home page
   //Room.find({}).sort({date: -1}).exec(function(err, docs) { ... });
-  Release.find({org: "fte"}).sort({date: -1}).exec (function(err, allReleases){
+  Release.find({}).sort({date: -1}).exec (function(err, allReleases){
         if(err) {
           console.log(err);
         } else {
@@ -67,7 +67,7 @@ app.post("/release/new", function(req, res){
       console.log(err);
     }else {
         //redirect to the home page
-      res.redirect("/release;");
+      res.redirect("/release");
     }
   })
 });
