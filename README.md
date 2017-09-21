@@ -5,4 +5,6 @@
 * Release Keeper uses mongo database, to store persistent data
 
 ## Start the app locally
-* Assuming you have an active local mongo daemon, `node app.js`
+* Should have an active local mongo daemon.
+* Install the required node packages, `npm install`.
+* Start the app, `node app.js`
