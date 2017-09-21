@@ -33,23 +33,29 @@ var Release = mongoose.model("Release", releaseSchema);
 
 //the home page
 app.get("/", function(req, res){
+  res.render("home")
+});
+
+
+
+app.get("/release", function(req, res){
   //get the data from db and render them in the home page
   //Room.find({}).sort({date: -1}).exec(function(err, docs) { ... });
   Release.find({org: "fte"}).sort({date: -1}).exec (function(err, allReleases){
         if(err) {
           console.log(err);
         } else {
-          res.render("home", {releases:allReleases});
+          res.render("release", {releases:allReleases});
         }
     })
   });
 
-app.get("/new", function(req, res){
+app.get("/release/new", function(req, res){
     res.render("new");
 });
 
 //Create a POST route that accepts new values to be updated, and redirect to the home route
-app.post("/", function(req, res){
+app.post("/release/new", function(req, res){
   //get the data
   var org = req.body.org;
   var package = req.body.package;
@@ -61,7 +67,7 @@ app.post("/", function(req, res){
       console.log(err);
     }else {
         //redirect to the home page
-      res.redirect("/");
+      res.redirect("/release;");
     }
   })
 });
