@@ -31,26 +31,18 @@ var Release = mongoose.model("Release", releaseSchema);
 //     }
 //   })
 
-// var releases = [
-//   {org: "dev", package: "v39.0.1.erd", date: "20170919114030"},
-//   {org: "fte", package: "v39.0.1.erd", date: "20170919114030"},
-//   {org: "uat", package: "v39.0.1.erd", date: "20170919114030"},
-//   {org: "prod", package: "v39.0.1.erd", date: "20170919114030"}
-// ];
-
 //the home page
 app.get("/", function(req, res){
   //get the data from db and render them in the home page
   //Room.find({}).sort({date: -1}).exec(function(err, docs) { ... });
-  Release.find({}).sort({date: -1}).exec (function(err, allReleases){
-      if(err) {
-        console.log(err);
-      } else {
-        res.render("home", {releases:allReleases});
-      }
-  })
-  //
-});
+  Release.find({org: "fte"}).sort({date: -1}).exec (function(err, allReleases){
+        if(err) {
+          console.log(err);
+        } else {
+          res.render("home", {releases:allReleases});
+        }
+    })
+  });
 
 app.get("/new", function(req, res){
     res.render("new");
